@@ -7,15 +7,11 @@ import { AdventCard } from "./AdventCard";
 export function AdventGrid() {
   return (
     <Container size="md">
-      <Group>
+      <Group justify="space-around">
         {data.map((item) => (
-          <AdventCard
-            key={item.date}
-            date={item.date}
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-          />
+          <AdventCard key={item.date} date={item.date}>
+            <item.icon size={60} stroke={1} style={{ margin: "auto" }} />
+          </AdventCard>
         ))}
       </Group>
     </Container>

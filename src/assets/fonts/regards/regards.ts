@@ -4,7 +4,7 @@ export const regardsFont = localFont({
   src: [
     {
       path: "./regards.otf",
-      weight: "700",
+      weight: "500",
       style: "normal",
     },
   ],

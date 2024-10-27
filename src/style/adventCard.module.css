@@ -1,0 +1,11 @@
+.paper {
+  background-color: white;
+  color: var(--mantine-color-blue-7);
+  padding: 1rem;
+  width: 20%;
+
+  h4 {
+    margin: 5px;
+    font-size: 2em;
+  }
+}

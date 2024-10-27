@@ -1,0 +1,8 @@
+.header {
+  margin: 1em;
+  justify-content: space-between;
+
+  @media (max-width: em(576)) {
+    justify-content: center;
+  }
+}

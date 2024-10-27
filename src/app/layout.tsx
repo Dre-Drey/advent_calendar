@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.css";
-import { regardsFont } from "./fonts/regards/regards";
-import { baskervilleFont } from "./fonts/baskerville/libreBaskerville";
+import { baskervilleFont } from "../assets/fonts/baskerville/libreBaskerville";
 
-import {
-  ColorSchemeScript,
-  MantineProvider,
-  createTheme,
-  DEFAULT_THEME,
-} from "@mantine/core";
+import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
+import { regardsFont } from "@/assets/fonts/regards/regards";
 
 export const metadata: Metadata = {
   title: "Calendrier de l'Avent 2024",
@@ -18,16 +13,7 @@ export const metadata: Metadata = {
 const theme = createTheme({
   fontFamily: baskervilleFont.style.fontFamily,
   fontFamilyMonospace: "Monaco, Courier, monospace",
-  headings: {
-    fontFamily: `${regardsFont.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
-    sizes: {
-      h1: {
-        fontWeight: "100",
-        fontSize: "rem(36)",
-        lineHeight: "1.4",
-      },
-    },
-  },
+  autoContrast: true,
   primaryColor: "blue",
   primaryShade: 7,
   colors: {
@@ -69,6 +55,14 @@ const theme = createTheme({
     ],
   },
   shadows: {},
+  headings: {
+    fontFamily: regardsFont.style.fontFamily,
+    sizes: {
+      h1: {
+        fontSize: "40px",
+      },
+    },
+  },
 });
 export default function RootLayout({
   children,

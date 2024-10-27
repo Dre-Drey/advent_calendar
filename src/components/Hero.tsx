@@ -1,15 +1,39 @@
 "use client";
 
-import { Container, Stack } from "@mantine/core";
+import { Container, Stack, Title, Box } from "@mantine/core";
 import { IconNorthStar } from "@tabler/icons-react";
+import classes from "../style/hero.module.css";
+import { getRemainingDaysToNextCalendar } from "@/utils/date";
 
 export function Hero() {
+  const year = new Date().getFullYear();
+
   return (
     <Container size="md">
-      <Stack align="center">
-        <IconNorthStar size={108} />
-        <h1>Calendrier de l&apos;Avent 2024</h1>
-      </Stack>
+      <Box className={classes.hero}>
+        <IconNorthStar className={classes.icon} />
+        <Stack align="center">
+          <Title order={2} style={{ fontFamily: "--mantine-font-family" }}>
+            Calendrier
+          </Title>
+          <Title order={2} style={{ fontSize: "60px" }}>
+            de l&apos;Avent
+          </Title>
+          <Title order={2} style={{ fontFamily: "--mantine-font-family" }}>
+            {year}
+          </Title>
+          <Title
+            order={3}
+            style={{
+              fontFamily: "--mantine-font-family",
+              textAlign: "center",
+              fontSize: "12px",
+            }}
+          >
+            (J-{getRemainingDaysToNextCalendar()} jours)
+          </Title>
+        </Stack>
+      </Box>
     </Container>
   );
 }

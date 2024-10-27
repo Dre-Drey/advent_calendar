@@ -2,6 +2,7 @@
 
 import { Container, Group, useMantineColorScheme, Button } from "@mantine/core";
 import { IconNorthStar } from "@tabler/icons-react";
+import classes from "../style/header.module.css";
 
 export function Header() {
   const { setColorScheme } = useMantineColorScheme();
@@ -9,15 +10,33 @@ export function Header() {
   return (
     <header>
       <Container size="md">
-        <Group justify="space-between">
-          <Group>
-            <IconNorthStar size={28} />
+        <Group className={classes.header}>
+          <Group visibleFrom="sm">
+            <IconNorthStar size={24} />
             <p>Calendrier de l&apos;Avent</p>
           </Group>
           <Group>
-            <Button onClick={() => setColorScheme("light")}>Light</Button>
-            <Button onClick={() => setColorScheme("dark")}>Dark</Button>
-            <Button onClick={() => setColorScheme("auto")}>Auto</Button>
+            <Button
+              color="beige.1"
+              variant="filled"
+              onClick={() => setColorScheme("light")}
+            >
+              Light
+            </Button>
+            <Button
+              color="beige.1"
+              variant="filled"
+              onClick={() => setColorScheme("dark")}
+            >
+              Dark
+            </Button>
+            <Button
+              color="beige.1"
+              variant="filled"
+              onClick={() => setColorScheme("auto")}
+            >
+              Auto
+            </Button>
           </Group>
         </Group>
       </Container>
