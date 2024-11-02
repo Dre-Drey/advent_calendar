@@ -18,6 +18,7 @@ export function Header() {
           <Group>
             <Button
               color="beige.1"
+              size="xs"
               variant="filled"
               onClick={() => setColorScheme("light")}
             >
@@ -25,6 +26,7 @@ export function Header() {
             </Button>
             <Button
               color="beige.1"
+              size="xs"
               variant="filled"
               onClick={() => setColorScheme("dark")}
             >
@@ -32,6 +34,7 @@ export function Header() {
             </Button>
             <Button
               color="beige.1"
+              size="xs"
               variant="filled"
               onClick={() => setColorScheme("auto")}
             >
