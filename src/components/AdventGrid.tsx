@@ -10,7 +10,7 @@ export function AdventGrid() {
       <Group justify="space-around">
         {data.map((item) => (
           <AdventCard key={item.date} date={item.date}>
-            <item.icon size={60} stroke={1} style={{ margin: "auto" }} />
+            <item.icon size={60} stroke={1} />
           </AdventCard>
         ))}
       </Group>

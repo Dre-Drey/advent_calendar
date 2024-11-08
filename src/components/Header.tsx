@@ -11,7 +11,7 @@ export function Header() {
     <header>
       <Container size="md">
         <Group className={classes.header}>
-          <Group visibleFrom="sm">
+          <Group visibleFrom="xs">
             <IconNorthStar size={24} />
             <p>Calendrier de l&apos;Avent</p>
           </Group>
