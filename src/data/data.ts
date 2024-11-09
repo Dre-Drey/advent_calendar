@@ -6,6 +6,7 @@ import {
   IconSnowflake,
   IconSnowman,
   IconChristmasBall,
+  IconSleigh,
 } from "@tabler/icons-react";
 
 export type CardType = {
@@ -43,7 +44,7 @@ export const data: DataType = [
   },
   {
     date: 5,
-    icon: "SleighIcon.svg",
+    icon: IconSleigh,
     title: "src",
     description: "src",
   },
@@ -73,7 +74,7 @@ export const data: DataType = [
   },
   {
     date: 10,
-    icon: "IconChristmasTree",
+    icon: IconSleigh,
     title: "src",
     description: "src",
   },
@@ -86,7 +87,7 @@ export const data: DataType = [
   {
     date: 12,
     title: "src",
-    icon: "SleighIcon.svg",
+    icon: IconSleigh,
     description: "src",
   },
   {
@@ -127,7 +128,7 @@ export const data: DataType = [
   },
   {
     date: 19,
-    icon: "SleighIcon.svg",
+    icon: IconSleigh,
     title: "src",
     description: "src",
   },
