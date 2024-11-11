@@ -68,7 +68,6 @@ export function Header() {
           </Group>
           <Switch
             size="md"
-            color="yellow.3"
             onLabel={sunIcon}
             offLabel={moonIcon}
             onChange={handleOnChange}

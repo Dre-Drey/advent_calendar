@@ -1,12 +1,13 @@
 .activePaper {
   background-color: white;
   padding: 1rem;
-  min-width: 25%;
-  max-width: 50%;
+  height: 215px;
+  width: 190px;
 
   h4 {
     margin: 5px;
     font-size: 2em;
+    color: var(--mantine-color-blue-7);
   }
   svg {
     width: 5rem;
@@ -28,8 +29,8 @@
   background-color: white;
   color: grey;
   padding: 1rem;
-  min-width: 25%;
-  max-width: 50%;
+  height: 215px;
+  width: 190px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,5 +54,24 @@
   button {
     color: grey;
     text-align: center;
+  }
+}
+.openedPaper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  height: 215px;
+  width: 190px;
+  padding: 1rem;
+  cursor: pointer;
+
+  h3 {
+    margin: 5px;
+    font-size: 1em;
+  }
+
+  img {
+    filter: grayscale(1);
   }
 }

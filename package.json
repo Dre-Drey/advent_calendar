@@ -22,7 +22,8 @@
     "react-canvas-confetti": "^2.0.7",
     "react-confetti": "^6.1.0",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
-    "react-rewards": "^2.0.4"
+    "react-rewards": "^2.0.4",
+    "react-spring": "^9.7.4"
   },
   "devDependencies": {
     "@types/node": "^20",

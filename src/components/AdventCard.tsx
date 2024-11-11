@@ -13,11 +13,13 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "../style/adventCard.module.css";
+import { OpenedAdventCard } from "./OpenedAdventCard";
 
 type AdventCardProps = {
   date: number;
   children: React.ReactNode;
   isCardEnabled: boolean;
+  isCardToday: boolean;
   category: string;
   image: string;
   title: string;
@@ -28,12 +30,14 @@ export function AdventCard({
   date,
   children,
   isCardEnabled,
+  isCardToday,
   category,
   image,
   title,
   description,
 }: AdventCardProps) {
   const [opened, { close, open }] = useDisclosure(false);
+
   return (
     <>
       <Modal opened={opened} onClose={close} size="lg" withCloseButton={false}>
@@ -47,28 +51,52 @@ export function AdventCard({
           </Card.Section>
 
           <Card.Section>
-            <Image src={image} height={160} alt={title} />
+            <Image src={image} height={260} alt={title} />
           </Card.Section>
         </Card>
       </Modal>
-      <Paper
-        // className={isCardEnabled ? classes.activePaper : classes.disabledPaper}
-        className={classes.activePaper}
-        shadow="md"
-      >
-        <Title order={4}>{date}</Title>
-        <Stack justify="center" align="center">
-          {children}
-          <Button
-            size="compact-md"
-            variant="filled"
-            color="lightBeige.5"
-            onClick={open}
-          >
-            Ouvrir
-          </Button>
-        </Stack>
-      </Paper>
+      {isCardToday && (
+        <Paper className={classes.activePaper} shadow="md">
+          <Title order={4}>{date}</Title>
+          <Stack justify="center" align="center">
+            {children}
+            <Button
+              size="compact-md"
+              variant="filled"
+              color="beige.7"
+              onClick={open}
+              disabled={!isCardEnabled}
+            >
+              Ouvrir
+            </Button>
+          </Stack>
+        </Paper>
+      )}
+      {isCardEnabled && !isCardToday && (
+        <OpenedAdventCard
+          category={category}
+          image={image}
+          title={title}
+          open={open}
+        />
+      )}
+      {!isCardEnabled && (
+        <Paper className={classes.disabledPaper} shadow="md">
+          <Title order={4}>{date}</Title>
+          <Stack justify="center" align="center">
+            {children}
+            <Button
+              size="compact-md"
+              variant="filled"
+              color="lightBeige.5"
+              onClick={open}
+              disabled={!isCardEnabled}
+            >
+              Ouvrir
+            </Button>
+          </Stack>
+        </Paper>
+      )}
     </>
   );
 }
