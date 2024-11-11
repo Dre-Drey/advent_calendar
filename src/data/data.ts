@@ -7,11 +7,12 @@ import {
   IconSnowman,
   IconChristmasBall,
   IconSleigh,
+  Icon,
 } from "@tabler/icons-react";
 
 export type CardType = {
   date: number;
-  icon: any;
+  icon: Icon;
   title: string;
   category: CategoryType;
   image: string;
