@@ -3,10 +3,28 @@
   justify-content: space-between;
 
   @media (max-width: em(651)) {
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
 .nav {
   margin: 5px;
+  @media (max-width: em(651)) {
+    justify-content: space-around;
+  }
+}
+
+.menuItem {
+  color: var(--mantine-color-blue-9);
+  justify-content: space-evenly;
+  gap: 2px;
+  margin: 1rem;
+  text-decoration: none;
+  :hover {
+    color: var(--mantine-color-blue-5);
+    transition: ease-in-out 0.5s;
+  }
+  > a {
+    margin-left: 5px;
+  }
 }
