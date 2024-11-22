@@ -8,7 +8,7 @@ import {
   rem,
   useComputedColorScheme,
 } from "@mantine/core";
-import { IconNorthStar } from "@tabler/icons-react";
+import { IconNorthStar, IconSnowman } from "@tabler/icons-react";
 import classes from "../style/header.module.css";
 // import { useReward } from "react-rewards";
 import { IconBrightnessUpFilled, IconMoonFilled } from "@tabler/icons-react";
@@ -62,16 +62,21 @@ export function Header() {
     <header>
       <Container size="md">
         <Group className={classes.header}>
-          <Group visibleFrom="xs">
-            <IconNorthStar size={24} />
-            <p>Calendrier de l&apos;Avent</p>
+          <Group visibleFrom="xs" className={classes.nav}>
+            <Group className={classes.calendar}>
+              <IconNorthStar size={24} />
+              <p>Calendrier de l&apos;Avent</p>
+            </Group>
+            <Group className={classes.about}>
+              <IconSnowman size={24} />
+              <p>Home</p>
+            </Group>
           </Group>
           <Switch
             size="md"
             onLabel={sunIcon}
             offLabel={moonIcon}
             onChange={handleOnChange}
-            // id="rewardLight"
           />
         </Group>
       </Container>

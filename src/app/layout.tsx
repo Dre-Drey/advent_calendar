@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header } from "../components/Header";
 import "@mantine/core/styles.css";
 import { baskervilleFont } from "../assets/fonts/baskerville/libreBaskerville";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme="auto">
+          <Header />
           {children}
         </MantineProvider>
       </body>
