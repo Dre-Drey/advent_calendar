@@ -35,6 +35,7 @@ export function AdventGrid() {
             image={item.image}
             title={item.title}
             description={item.description}
+            link={item.link}
           >
             <item.icon size={60} stroke={1} />
           </AdventCard>

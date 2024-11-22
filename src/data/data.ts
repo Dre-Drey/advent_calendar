@@ -17,7 +17,14 @@ export type CardType = {
   category: CategoryType;
   image: string;
   description: string;
+  link?: LinkModal;
 };
+
+export type LinkModal = {
+  url: string;
+  text: string;
+};
+
 export type DataType = CardType[];
 
 export type CategoryType =
@@ -37,6 +44,10 @@ export const data: DataType = [
     image: "/images/FC-Sion.jpeg",
     description:
       "Fondé en 1909, le club emblématique du Valais est promu en 1ere ligue suisse en 1944 puis en LNA en 1962 et remporte sa première coupe de Suisse en 1965 : le début du mythe. En effet, en coupe de Suisse, le FC Sion peut se prévaloir de 13 victoires sur 14 matchs. Jusqu’en 2017, le club était invaincu en finale de Coupe de suisse. Il a vu passer quelques internationaux célèbres comme Balotelli ou Gennaro Gattuso, et locaux comme Nestor Clausen. Les Valaisans sont particulièrement attachés à ce club dont l'histoire a dépassé les frontières du canton.",
+    link: {
+      url: "https://www.fcsion.ch/fr/historique-du-club/",
+      text: "L'histoire du club sur le site du FC Sion",
+    },
   },
   {
     date: 2,

@@ -14,6 +14,8 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import classes from "../style/adventCard.module.css";
 import { OpenedAdventCard } from "./OpenedAdventCard";
+import { LinkModal } from "@/data/data";
+import Link from "next/link";
 
 type AdventCardProps = {
   date: number;
@@ -24,6 +26,7 @@ type AdventCardProps = {
   image: string;
   title: string;
   description: string;
+  link?: LinkModal;
 };
 
 export function AdventCard({
@@ -35,6 +38,7 @@ export function AdventCard({
   image,
   title,
   description,
+  link,
 }: AdventCardProps) {
   const [opened, { close, open }] = useDisclosure(false);
 
@@ -45,11 +49,22 @@ export function AdventCard({
           <Card.Section mb="lg">
             <Badge color="blue.1">{category}</Badge>
             <Group justify="space-between" my="lg">
-              <Title c="blue.7">{title}</Title>
+              <Title c="blue.8" order={2}>
+                {title}
+              </Title>
             </Group>
             <Text size="sm">{description}</Text>
+            {link && (
+              <>
+                <Title order={3} c="blue.8" my="lg">
+                  En savoir plus
+                </Title>
+                <Link href={link.url}>
+                  <Text size="sm">{link.text}</Text>
+                </Link>
+              </>
+            )}
           </Card.Section>
-
           <Card.Section>
             <Image src={image} height={260} alt={title} />
           </Card.Section>
