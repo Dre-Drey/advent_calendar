@@ -50,7 +50,7 @@ export function AdventCard({
             <Badge color="blue.1">{category}</Badge>
             <Group justify="space-between" my="lg">
               <Title c="blue.8" order={2}>
-                {title}
+                {date} décembre - {title}
               </Title>
             </Group>
             <Text size="sm">{description}</Text>
@@ -88,12 +88,7 @@ export function AdventCard({
         </Paper>
       )}
       {isCardEnabled && !isCardToday && (
-        <OpenedAdventCard
-          category={category}
-          image={image}
-          title={title}
-          open={open}
-        />
+        <OpenedAdventCard image={image} title={title} date={date} open={open} />
       )}
       {!isCardEnabled && (
         <Paper className={classes.disabledPaper} shadow="md">
