@@ -1,3 +1,4 @@
+"use client";
 import { Paper, Title } from "@mantine/core";
 import classes from "../style/adventCard.module.css";
 

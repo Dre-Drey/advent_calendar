@@ -16,6 +16,7 @@ import classes from "../style/adventCard.module.css";
 import { OpenedAdventCard } from "./OpenedAdventCard";
 import { LinkModal } from "@/data/data";
 import Link from "next/link";
+import { Sparkles } from "./Sparkles";
 
 type AdventCardProps = {
   date: number;
@@ -73,18 +74,21 @@ export function AdventCard({
       {isCardToday && (
         <Paper className={classes.activePaper} shadow="md">
           <Title order={4}>{date}</Title>
-          <Stack justify="center" align="center">
-            {children}
-            <Button
-              size="compact-md"
-              variant="filled"
-              color="beige.7"
-              onClick={open}
-              disabled={!isCardEnabled}
-            >
-              Ouvrir
-            </Button>
-          </Stack>
+          <Sparkles color="#003fa8">
+            <Stack justify="center" align="center">
+              {children}
+
+              <Button
+                size="compact-md"
+                variant="filled"
+                color="beige.7"
+                onClick={open}
+                disabled={!isCardEnabled}
+              >
+                Ouvrir
+              </Button>
+            </Stack>
+          </Sparkles>
         </Paper>
       )}
       {isCardEnabled && !isCardToday && (
