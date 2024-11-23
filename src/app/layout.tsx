@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Header } from "../components/Header";
 import "@mantine/core/styles.css";
 import { baskervilleFont } from "../assets/fonts/baskerville/libreBaskerville";
@@ -81,6 +82,7 @@ export default function RootLayout({
           <Header />
           <div className={classes.root}>{children}</div>
         </MantineProvider>
+        <Analytics />
       </body>
     </html>
   );
