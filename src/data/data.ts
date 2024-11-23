@@ -124,7 +124,7 @@ export const data: DataType = [
   {
     date: 10,
     icon: IconSleigh,
-    title: "Les universités suisses sont peu chères",
+    title: "Les universités suisses peu chères",
     category: "Fun Fact",
     image: "/images/universite_lausanne.jpeg",
     description:

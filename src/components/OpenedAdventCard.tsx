@@ -10,10 +10,8 @@ type OpenedAdventCardProps = {
 export function OpenedAdventCard({ title, date, open }: OpenedAdventCardProps) {
   return (
     <Paper className={classes.openedPaper} shadow="md" onClick={open}>
-      <Title>{date}</Title>
-      <Title order={3} c="blue.7">
-        {title}
-      </Title>
+      <Title order={3}>{date}</Title>
+      <Title order={4}>{title}</Title>
       {/* <Image src={image} height={60} alt={title} /> */}
     </Paper>
   );

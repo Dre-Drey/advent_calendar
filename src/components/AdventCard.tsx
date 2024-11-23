@@ -75,7 +75,7 @@ export function AdventCard({
       </Modal>
       {isCardToday && (
         <Paper className={classes.activePaper} shadow="md">
-          <Title order={4}>{date}</Title>
+          <Title order={3}>{date}</Title>
           <Stack justify="center" align="center">
             {children}
             <Button
@@ -118,7 +118,7 @@ export function AdventCard({
       )}
       {!isCardEnabled && (
         <Paper className={classes.disabledPaper} shadow="md">
-          <Title order={4}>{date}</Title>
+          <Title order={3}>{date}</Title>
           <Stack justify="center" align="center">
             {children}
             <Button
