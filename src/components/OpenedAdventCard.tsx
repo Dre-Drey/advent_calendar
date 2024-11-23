@@ -1,4 +1,4 @@
-import { Paper, Title, Image, Badge } from "@mantine/core";
+import { Paper, Title } from "@mantine/core";
 import classes from "../style/adventCard.module.css";
 
 type OpenedAdventCardProps = {
@@ -7,12 +7,7 @@ type OpenedAdventCardProps = {
   date: number;
   open: () => void;
 };
-export function OpenedAdventCard({
-  image,
-  title,
-  date,
-  open,
-}: OpenedAdventCardProps) {
+export function OpenedAdventCard({ title, date, open }: OpenedAdventCardProps) {
   return (
     <Paper className={classes.openedPaper} shadow="md" onClick={open}>
       <Title>{date}</Title>
