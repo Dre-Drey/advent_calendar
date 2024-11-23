@@ -10,12 +10,15 @@ import {
   Text,
   Badge,
   Group,
+  getGradient,
+  useMantineTheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "../style/adventCard.module.css";
 import { OpenedAdventCard } from "./OpenedAdventCard";
 import { LinkModal } from "@/data/data";
 import Link from "next/link";
+import Sparkles from "react-sparkle";
 
 type AdventCardProps = {
   date: number;
@@ -41,7 +44,7 @@ export function AdventCard({
   link,
 }: AdventCardProps) {
   const [opened, { close, open }] = useDisclosure(false);
-
+  const theme = useMantineTheme();
   return (
     <>
       <Modal opened={opened} onClose={close} size="lg" withCloseButton={false}>
@@ -78,10 +81,33 @@ export function AdventCard({
             <Button
               size="compact-md"
               variant="filled"
-              color="beige.7"
+              color={getGradient(
+                { deg: 90, from: "beige.2", to: "beige.8" },
+                theme
+              )}
               onClick={open}
               disabled={!isCardEnabled}
+              style={{ position: "relative", border: "none" }}
             >
+              <Sparkles
+                color={[
+                  "#fffee2",
+                  "#fefbcd",
+                  "#fcf79d",
+                  "#fbf269",
+                  "#f9ef3e",
+                  "#f8ec23",
+                  "#f8eb10",
+                  "#dcd100",
+                  "#c3b900",
+                  "#a8a000",
+                ]}
+                count={10}
+                minSize={5}
+                maxSize={10}
+                fadeOutSpeed={50}
+                overflowPx={20}
+              />
               Ouvrir
             </Button>
           </Stack>
