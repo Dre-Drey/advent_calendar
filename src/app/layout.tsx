@@ -6,6 +6,7 @@ import { baskervilleFont } from "../assets/fonts/baskerville/libreBaskerville";
 import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
 import { regardsFont } from "@/assets/fonts/regards/regards";
 
+import classes from "../style/page.module.css";
 export const metadata: Metadata = {
   title: "Calendrier de l'Avent 2024",
   description: "Calendrier de l'Avent 2024",
@@ -78,7 +79,7 @@ export default function RootLayout({
       <body>
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <Header />
-          {children}
+          <div className={classes.root}>{children}</div>
         </MantineProvider>
       </body>
     </html>

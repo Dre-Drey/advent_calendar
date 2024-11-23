@@ -16,6 +16,7 @@
 
 .menuItem {
   color: var(--mantine-color-blue-9);
+  display: flex;
   justify-content: space-evenly;
   gap: 2px;
   margin: 1rem;

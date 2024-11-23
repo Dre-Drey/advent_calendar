@@ -9,10 +9,14 @@ import {
   useComputedColorScheme,
   Text,
 } from "@mantine/core";
-import { IconNorthStar, IconSnowman } from "@tabler/icons-react";
+import {
+  IconNorthStar,
+  IconSnowman,
+  IconBrightnessUpFilled,
+  IconMoonFilled,
+} from "@tabler/icons-react";
 import classes from "../style/header.module.css";
 // import { useReward } from "react-rewards";
-import { IconBrightnessUpFilled, IconMoonFilled } from "@tabler/icons-react";
 import Link from "next/link";
 
 export function Header() {

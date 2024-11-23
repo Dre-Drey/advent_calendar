@@ -4,11 +4,9 @@ import classes from "../style/page.module.css";
 
 export default function Home() {
   return (
-    <div className={classes.root}>
-      <main>
-        <Hero />
-        <AdventGrid />
-      </main>
-    </div>
+    <main>
+      <Hero />
+      <AdventGrid />
+    </main>
   );
 }
