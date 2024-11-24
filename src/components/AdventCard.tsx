@@ -127,6 +127,7 @@ export function AdventCard({
               color="lightBeige.5"
               onClick={open}
               disabled={!isCardEnabled}
+              style={{ cursor: "auto" }}
             >
               Ouvrir
             </Button>

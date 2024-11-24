@@ -7,7 +7,7 @@ export default function About() {
     <Container size="md">
       <Box className={classes.hero}>
         <IconSnowman className={classes.icon} />
-        <Title>About</Title>
+        <Title c="blue.8">About</Title>
       </Box>
     </Container>
   );
