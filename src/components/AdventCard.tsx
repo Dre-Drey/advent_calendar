@@ -1,4 +1,6 @@
-"useClient";
+"use client";
+
+import { useState } from "react";
 import {
   Paper,
   Title,
@@ -44,7 +46,14 @@ export function AdventCard({
   link,
 }: AdventCardProps) {
   const [opened, { close, open }] = useDisclosure(false);
+  const [isTodayCardOpened, setIsTodayCardOpened] = useState(false);
   const theme = useMantineTheme();
+
+  const handleOnClick = () => {
+    open();
+    setIsTodayCardOpened(true);
+  };
+
   return (
     <>
       <Modal opened={opened} onClose={close} size="lg" withCloseButton={false}>
@@ -85,7 +94,7 @@ export function AdventCard({
                 { deg: 90, from: "beige.2", to: "beige.8" },
                 theme
               )}
-              onClick={open}
+              onClick={handleOnClick}
               disabled={!isCardEnabled}
               style={{ position: "relative", border: "none" }}
             >
@@ -116,7 +125,7 @@ export function AdventCard({
       {isCardEnabled && !isCardToday && (
         <OpenedAdventCard image={image} title={title} date={date} open={open} />
       )}
-      {!isCardEnabled && (
+      {!isCardEnabled && !isTodayCardOpened && (
         <Paper className={classes.disabledPaper} shadow="md">
           <Title order={3}>{date}</Title>
           <Stack justify="center" align="center">

@@ -34,3 +34,19 @@
   top: 3rem;
   left: 5rem;
 }
+.textAbout {
+  margin: 50px;
+  @media (max-width: em(651)) {
+    margin: 5px;
+  }
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-left: 26em;
+  @media (max-width: em(651)) {
+    margin-left: 1em;
+  }
+}

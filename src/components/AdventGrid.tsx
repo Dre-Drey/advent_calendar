@@ -3,23 +3,12 @@
 import { Container, Group } from "@mantine/core";
 import { data } from "../data/data";
 import { AdventCard } from "./AdventCard";
-import { format } from "date-fns";
+import { compareAsc } from "date-fns";
 
 export function AdventGrid() {
-  const currentDate = format(new Date(), "dd/MM/yyyy");
-
-  const getCardDate = (day: number) => {
-    return format(new Date(new Date().getFullYear(), 10, day), "dd/MM/yyyy");
-  };
-  const isCardEnabled = (day: number) => {
-    return getCardDate(day) <= currentDate;
-  };
-
-  const isCardToday = (day: number) => {
-    if (getCardDate(day) == currentDate) {
-      return true;
-    }
-    return false;
+  const today = new Date();
+  const cardDate = (date: number) => {
+    return new Date(2024, 11, date);
   };
 
   return (
@@ -29,8 +18,10 @@ export function AdventGrid() {
           <AdventCard
             key={item.date}
             date={item.date}
-            isCardEnabled={isCardEnabled(item.date)}
-            isCardToday={isCardToday(item.date)}
+            // CompareAsc return 1 if the first date is after the second,
+            // -1 if the first date is before the second or 0 if dates are equal.
+            isCardEnabled={compareAsc(today, cardDate(item.date)) === 1}
+            isCardToday={compareAsc(today, cardDate(item.date)) === 0}
             category={item.category}
             image={item.image}
             title={item.title}
