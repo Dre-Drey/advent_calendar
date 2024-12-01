@@ -95,7 +95,6 @@ export function AdventCard({
                 theme
               )}
               onClick={handleOnClick}
-              disabled={!isCardEnabled}
               style={{ position: "relative", border: "none" }}
             >
               <Sparkles
@@ -125,7 +124,7 @@ export function AdventCard({
       {isCardEnabled && !isCardToday && (
         <OpenedAdventCard image={image} title={title} date={date} open={open} />
       )}
-      {!isCardEnabled && !isTodayCardOpened && (
+      {!isCardEnabled && !isTodayCardOpened && !isCardToday && (
         <Paper className={classes.disabledPaper} shadow="md">
           <Title order={3}>{date}</Title>
           <Stack justify="center" align="center">

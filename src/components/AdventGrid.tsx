@@ -3,12 +3,12 @@
 import { Container, Group } from "@mantine/core";
 import { data } from "../data/data";
 import { AdventCard } from "./AdventCard";
-import { compareAsc } from "date-fns";
+import { compareAsc, format } from "date-fns";
 
 export function AdventGrid() {
-  const today = new Date();
+  const today = format(new Date(), "yyyy-MM-dd");
   const cardDate = (date: number) => {
-    return new Date(2024, 11, date);
+    return format(new Date(2024, 11, date), "yyyy-MM-dd");
   };
 
   return (
